@@ -4,7 +4,7 @@ import { opine } from "https://deno.land/x/opine@1.4.0/mod.ts";
 
 const app = opine();
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("Hello World");
 });
 
