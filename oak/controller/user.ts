@@ -11,8 +11,6 @@ const getAllUsers = async (ctx: RouterContext) => {
     message: "유저 조회를 완료하였습니다.",
     data: { users },
   };
-}
-
-export {
-  getAllUsers,
 };
+
+export { getAllUsers };

@@ -12,12 +12,12 @@ class App extends Dero {
 
   public async start(port: number) {
     await this.listen(port, async (err) => {
-        if (err) {
-          console.log(err);
-          await client.close();
-        }
-        console.log(`server has started on http://localhost:${port} 🚀🚀🚀`);
-    })
+      if (err) {
+        console.log(err);
+        await client.close();
+      }
+      console.log(`server has started on http://localhost:${port} 🚀🚀🚀`);
+    });
   }
 }
 

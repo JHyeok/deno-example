@@ -4,11 +4,11 @@ export default (req: HttpRequest, _res: HttpResponse, next: NextFunction) => {
   const userSchema = {
     firstName: vs.string(),
     lastName: vs.string(),
-    isActive: vs.boolean()
+    isActive: vs.boolean(),
   };
 
   let message: any;
-  
+
   vs.applySchemaObject(userSchema, req.parsedBody, (err) => {
     const key = err.keyStack.shift();
     if (key) {
@@ -20,8 +20,8 @@ export default (req: HttpRequest, _res: HttpResponse, next: NextFunction) => {
   });
 
   if (message) {
-    return req.pond({statusCode: 422, message }, { status: 422 });
+    return req.pond({ statusCode: 422, message }, { status: 422 });
   }
 
   next();
-}
+};
